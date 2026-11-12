@@ -1,0 +1,13 @@
+services:
+  db:
+    image: pgvector/pgvector:pg18
+    environment:
+      POSTGRES_USER: genai
+      POSTGRES_PASSWORD: genai
+      POSTGRES_DB: genai
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql
+volumes:
+  pgdata:
